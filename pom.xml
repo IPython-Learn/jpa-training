@@ -13,9 +13,16 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.0.Final</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.1.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
 			<version>5.1.0.Final</version>
 		</dependency>
 
@@ -30,6 +37,7 @@
 			<artifactId>derby</artifactId>
 			<version>10.12.1.1</version>
 		</dependency>
+
 
 
 	</dependencies>

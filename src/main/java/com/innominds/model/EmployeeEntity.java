@@ -15,7 +15,8 @@ import javax.persistence.TemporalType;
 @Entity(name = "Employee")
 @Table(name = "employee_tbl")
 @NamedQueries({ @NamedQuery(name = "employeeById", query = "SELECT e FROM Employee e WHERE e.id=:id"),
-    @NamedQuery(name = "getRecentEmployee", query = "SELECT e FROM Employee e WHERE e.id=(SELECT max(emp.id) FROM Employee emp)") })
+        @NamedQuery(name = "getRecentEmployee", query = "SELECT e FROM Employee e WHERE e.id=(SELECT max(emp.id) FROM Employee emp)"),
+        @NamedQuery(name = "getEmployeeDTO", query = "SELECT NEW com.innominds.dto.Employee(e.id,e.name,e.salary,e.joinDate) FROM Employee e") })
 public class EmployeeEntity {
 
     @Id
@@ -66,7 +67,7 @@ public class EmployeeEntity {
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
-        builder.append("EmployeeEntity [");
+        builder.append("Employee [");
         if (id != null) {
             builder.append("id=");
             builder.append(id);
